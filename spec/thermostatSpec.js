@@ -11,4 +11,12 @@ describe("thermostat", function() {
     });
   });
 
+  describe('#up', function() {
+
+    it('increases temperature by 5 degrees', function() {
+      thermostat.up(5);
+      expect(thermostat.temp).toEqual(25);
+    });
+  });
+
 });
