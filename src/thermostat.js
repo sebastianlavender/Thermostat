@@ -6,13 +6,15 @@ function Thermostat () {
 
 Thermostat.prototype.up = function(number) {
   if (this.powerSaving === true) {
-    if (this.temp + number > 25) {
-      this.temp = 25;
-    } else {
-      this.temp += number;
-    }
+    var maxTemp = 25;
   } else {
-  this.temp += number;
+    var maxTemp = 32;
+  };
+
+  if (this.temp + number > maxTemp) {
+    this.temp = maxTemp;
+  } else {
+    this.temp += number;
   };
 };
 
@@ -22,4 +24,8 @@ Thermostat.prototype.down = function(number) {
   } else {
     this.temp -= number;
   };
+};
+
+Thermostat.prototype.set = function() {
+  this.powerSaving ^= true;
 };
