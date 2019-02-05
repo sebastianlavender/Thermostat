@@ -19,4 +19,12 @@ describe("thermostat", function() {
     });
   });
 
+  describe('#down', function() {
+
+    it('decreases temperature by 5 degrees', function() {
+      thermostat.down(5);
+      expect(thermostat.temp).toEqual(15);
+    });
+  });
+
 });
