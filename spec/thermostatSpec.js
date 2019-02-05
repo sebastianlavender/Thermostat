@@ -17,6 +17,11 @@ describe("thermostat", function() {
       thermostat.up(5);
       expect(thermostat.temp).toEqual(25);
     });
+
+    it('if powerSaving is on limit temp to 25', function() {
+      thermostat.up(10);
+      expect(thermostat.temp).toEqual(25);
+    });
   });
 
   describe('#down', function() {
